@@ -16,6 +16,7 @@ srun cmd [--options]
 ```
 srun --mem nG --pty bash 
 ```
+Où _n_ est un entier proportionnel aux ressources nécessaires pour la commande lancée
 #### Lancer un script 
 ```
 sbatch script.sh
@@ -23,8 +24,18 @@ sbatch script.sh
 
 ### Rédaction d'un script shell ```script.sh```
 Le langage d'un script shell est le ```bash```, souvent noté ```/bin/bash```, ce qui correspond à sa localisation exacte au sein de l'architecture Unix.
+Shell signifie terminal, ```bash``` est le langage terminal du shell Bourne Again Shell ou ```bash```. Il en existe d'autres comme le ```zsh```, le ```fish```, le ```dash``` etc.
 
+#### Exemple de script shell
+Attention, contrairement à  ce qui se fait dans tous la plupart des autres langages, le ```#``` en début de ligne n'indique pas un commentaire, mais un paramètre de slurm.
+```
+# !/bin/bash
+#SBATCH --time=xxxxxx #job time limit; Format days-hours:minutes:seconds
+#SBATCH --mem=nG #memory reservation where n is an integer
+#SBATCH --cpus-per-task=n #ncpu on the same node where n is an integer
 
+echo Hello world #Command
+```
 
 
 
