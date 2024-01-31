@@ -109,6 +109,7 @@ Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut cha
 - Que pouvez vous dire sur la structure des MAGS ? Proposez des interprétations buiologiques des figures mathématiques observées. 
 - Extrayez une portion de séquence de chaque graph. Blastez en brut sur le NCBI. Inférez une taxonomie potentielle. Expliquez sur quoi se base cette taxonomie.
 - A partir de la taxonomie inféré avec Blast, trouvez l'organisme considéré sur le NCBI. Téléchargez la séquence codante de son ARN 16S. Utilisez la fonction ```Blast``` de ```Bandage``` pour placer l'ARN sur votre graph. Qu'observez vous ? N'hésitez pas à jouer avec les paramètres de Blast si vous n'êtes pas satisfaits du résultat.
+- Faites un dessin sur du papier pour représenter, selon vous l'organisation potentielle des fragments d'ADN les uns par rapport aux autres.
 
 
 
