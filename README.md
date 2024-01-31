@@ -36,7 +36,21 @@ Attention, contrairement à  ce qui se fait dans tous la plupart des autres lang
 
 echo Hello world #Command
 ```
+#### Défintion de variables ```bash```
+Les chemins d'accès aux fichiers sont longs, compliqués et ne tolèrent pas la moindre erreur de caractère. Je vous conseil d'utilisez du copier-coller ou bien du clic molette pour copier-coller rapidement (Triple doigts sur un pad tactile). Pour éviter les commandes longues comme le bras et les erruers, on définit souvent des variables avant de travailler. Exemple :
+```
+FASTQ="/path/to/data/sequence.fastq"
 
+echo ${FASTQ} #Outputs /path/to/data/sequence.fastq
+
+cmd $FATSQ > output
+```
+
+
+
+## Petit point ChatGPT
+Il est indéniable que ChatGPT sera votre professeur de bioinformatique et informatique dés que vous sortirez de cette pièce. 
+Dans le cadre de ces exercies, ne l'utilisez pas tout de suite, lisez d'abord la doc des logiciels vace la command ```--help``` ou ```-h``` ou parfois ```man cmd``` où cmd est la commande shell pour laquelle vous cherchez des informations. ChatGPT n'est pas interdit, je vous recommande même vivement de vous en servir dans le futur. Le but de ce TP n'est pas de traiter des séquences, mais d'apprendre à manipuler les séquences. Si vous donnez les exercices à ChatGPT, il les fera super vite, mieux que vous et moi, mais vous n'aurez pas nécessairement saisi ce qu'il se passe. Bref, privilégez les discussions avec moi au cours du TP. Vous aurez tout le temps de vous faire basher part ChatGPT pendant votre stage.
 
 
 ## Prise en main du jeu de données
@@ -44,19 +58,24 @@ echo Hello world #Command
 Les données fastq correspondent à du produit de séquenceur. Dans un fastq, le nucléotide n'est pas figé, c'est une **mesure**. Comme toute mesure, elle possède sa part d'incertitude. On détermine cette incertitude à l'aide de son score Phred+33. Le score est matérialisé par un caractère ASCI. Une façon de le comprendre au doigt mouillé où le caractère représente la probabilité d'éxactitude de mesure de la base: A>B>C>....>a>b>c>.....>$>,>;>!
 Une façon plus simple de déterminer la qualité d'une séquence, ou d'un jeu de séquence, est d'utiliser un logiciel qui compile toutes ces informations de score et les matérialise sous la forme de graph :
 
-### FastQC 
+### Exercice N°1 : FastQC 
+Utilisez le logiciel ```fastqc``` pour obtenir des informations relatives à la qualité de votre jeu de donnée de départ.
+Pour savoir comment utiliser fastqc, vous pouvez utiliser la commande suivante.
 ```
-fastqc seqs.fastq
+fastqc
 ```
-Interprétez. Discutez les valeurs observées contre ce que l'on attendrait avec d'auitres techniques de séquençage
+Interprétez. Discutez les valeurs observées contre ce que l'on attendrait avec d'auitres techniques de séquençage. Vous pouvez vous fier à vos connaissances, chercher sur internet ou demander l'avis de ChatGPT sur les scores moyens etc. 
 
 ## Assemblage
 
-L'assemblage est un grand puzzle. Sauf qu'il est hardcore et qu'il existe plusieurs solutions qui se valent autant les unes que les autres. Et que l'on a pas la boîte pour voir si on ne fait pas n'importe quoi. 
+L'assemblage est un grand puzzle. Sauf qu'il est hardcore et qu'il existe plusieurs solutions qui se valent autant les unes que les autres. Et que l'on a pas la boîte pour voir si on ne fait pas n'importe quoi. utilisez flye pour reconstruire votre jeu de donnée en MAGs. N'oubliez pas qu'il s'agit d'un jeu de données **métagénomiques**.
+L'assemblage est une étape longue. 
 
 ```
-flye --meta seqs.fastq 
+flye 
 ```
+
+Il est peu probable que votre assemblage se termine avant la fin de la séance. Lorsque vous avez lancé l'assemblage, RDV à l'Exercice de pseudo métagénomique en fin de document
 
 ## Visualisation
 
@@ -75,3 +94,7 @@ Je vais vous distribuer un identifiant de séquence. Vous allez pêcher cette s�
 ## Binning préhistorique
 
 L'idée désormais c'est d'utiliser le marqueur que vous avez placé sur votre graph d'assemblage pour essayer de retrouver les séquences qui vont ensemble
+
+## Exercice : Pseudo-Métagénomique
+récupérer le graph d'assemblage assembly_graph.gfa du fichier partagé ```/data/```
+
