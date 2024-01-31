@@ -16,6 +16,14 @@ srun cmd [--options]
 ```
 srun --mem nG --pty bash 
 ```
+#### Lancer un script 
+```
+sbatch script.sh
+```
+
+### Rédaction d'un script shell ```script.sh```
+Le langage d'un script shell est le ```bash```, souvent noté ```/bin/bash```, ce qui correspond à sa localisation exacte au sein de l'architecture Unix.
+
 
 
 
