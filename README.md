@@ -95,6 +95,20 @@ Je vais vous distribuer un identifiant de séquence. Vous allez pêcher cette s�
 
 L'idée désormais c'est d'utiliser le marqueur que vous avez placé sur votre graph d'assemblage pour essayer de retrouver les séquences qui vont ensemble
 
-## Exercice : Pseudo-Métagénomique
-récupérer le graph d'assemblage assembly_graph.gfa du fichier partagé ```/data/```
+# Exercice : Pseudo-Métagénomique
+Récupérer le graph d'assemblage ```assembly_graph.gfa``` du fichier partagé ```/data/```
+
+## Visualisation avec ```Bandage```
+Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut charger le graph d'assemblage dans le bouton en haut à gauche ```load graph```. Cliquez ensuite sur le bouton ```draw graph```. Laissez la machine travailer quelques secondes puis prenez quelques minutes pour essayer de comprendre ce que vous avez devant les yeux. N'hésitez pas à aller faire un tour sur le wiki de Bandage pour voir un peu comment ça fonctionne : https://github.com/rrwick/Bandage/wiki
+
+ Utilisez ```Bandage``` pour visualiser le graph d'assemblage.
+
+ ### QUESTIONS
+- Détaillez vos observations. 
+- Selon vous, combien d'organismes génétiquement distincts composent cet échantillon pseudo-métagénomique ? 
+- Que pouvez vous dire sur la structure des MAGS ? Proposez des interprétations buiologiques des figures mathématiques observées. 
+- Extrayez une portion de séquence de chaque graph. Blastez en brut sur le NCBI. Inférez une taxonomie potentielle. Expliquez sur quoi se base cette taxonomie.
+- A partir de la taxonomie inféré avec Blast, trouvez l'organisme considéré sur le NCBI. Téléchargez la séquence codante de son ARN 16S. Utilisez la fonction ```Blast``` de ```Bandage``` pour placer l'ARN sur votre graph. Qu'observez vous ? N'hésitez pas à jouer avec les paramètres de Blast si vous n'êtes pas satisfaits du résultat.
+
+
 
