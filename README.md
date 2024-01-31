@@ -1,5 +1,25 @@
 # TP de Metagenomique
 
+## Utiliser un cluster de calcul
+
+Les clusters de calculs sont des machines multiples divisées en deux grandes entitées : Le serveur frontal (Marygold) et les noeuds (Nodes).
+Le serveur frontal sert à accéder aux disques et à lancer des jobs sur les noeuds. La gestion des noeuds et l'éxécution des jobs est gérée par un cadenceur. 
+Le cadenceur le plus utilisé pour Linux est ```slurm```, c'est ce qui est utilisé sur le cluster de l'université. 
+Il ne faut pas lancer de calcul ni de job gourmand sur le serveur frontal. Il est partagé par tous les utilisateurs en même temps et chacun doit pouvoir avoir suffisamment de ressources pour naviguer facilement dans ses données et y lancer les jobs nécessaires. De plus, le serveur frontal a beau être un ordinateur puissant, il n'est pas taillé pour du calcul. Un job gourmand peut le faire planter, pénalisant ainsi tous les utilisateurs en même temps. 
+
+Plusieurs façons de lancer un job avec slurm :
+#### Pour lancer immédiatement une commande (```cmd```)sur un noeud
+```
+srun cmd [--options]
+```
+#### Pour utilise run noeud et se positionner dessus plutôt que sur le frontal
+```
+srun --mem nG --pty bash 
+```
+
+
+
+
 ## Prise en main du jeu de données
 
 Les données fastq correspondent à du produit de séquenceur. Dans un fastq, le nucléotide n'est pas figé, c'est une **mesure**. Comme toute mesure, elle possède sa part d'incertitude. On détermine cette incertitude à l'aide de son score Phred+33. Le score est matérialisé par un caractère ASCI. Une façon de le comprendre au doigt mouillé où le caractère représente la probabilité d'éxactitude de mesure de la base: A>B>C>....>a>b>c>.....>$>,>;>!
