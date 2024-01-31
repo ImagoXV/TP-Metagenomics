@@ -111,5 +111,35 @@ Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut cha
 - A partir de la taxonomie inféré avec Blast, trouvez l'organisme considéré sur le NCBI. Téléchargez la séquence codante de son ARN 16S. Utilisez la fonction ```Blast``` de ```Bandage``` pour placer l'ARN sur votre graph. Qu'observez vous ? N'hésitez pas à jouer avec les paramètres de Blast si vous n'êtes pas satisfaits du résultat.
 - Faites un dessin sur du papier pour représenter, selon vous l'organisation potentielle des fragments d'ADN les uns par rapport aux autres.
 
+##  Manipulation avec ```Anvi'o```
+### Préparation du dataset
+Pour manipuler un métagénome avec Anvio, il faut commencer par créer un objket ```.db```, une database, la marque de fabrique d'Anvi'o
+Le calcul prend moins d'une minute
+```
+anvi-gen-contigs-database--contigs-fasta assembly.fasta --project-name Pseudo-Metagenomics --output-db-path contigs.db --num-threads 4
+```
+#### QUESTION
+Lisez bien l'output visuel d'Anvi'o. Que vous apprend-t-il ? 
+
+### Annotation du dataset
+```
+anvi-run-kegg-kofams -c contigs.db -T 4
+````
+Cette étape prend quelques minutes, allez boire un café
+
+### Visualisation du dataset
+
+```
+anvi-profile -c contigs-db --blank-profile
+```
+Il faut que je demande à Camélia pour la visualisation sur naviagetru. il faut un X
 
 
+
+
+### Estimation du métabolism
+Pas sur qu'on fasse cette partie
+```
+anvi-estimate-metabolism -c contigs.db \
+                         -O Pseudo-metagenomics_metabolism
+```
