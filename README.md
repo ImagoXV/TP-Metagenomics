@@ -46,6 +46,10 @@ echo ${FASTQ} #Outputs /path/to/data/sequence.fastq
 cmd $FATSQ > output
 ```
 
+## Conclusion utilisation du cluster
+Pour finir, privilégiez le lancement de commandes avec ```sbatch script.sh``` plutôt que ```srun```, c'est plus pratique pour tout le monde et vous permet de conserver une trace durable de vos analyses.
+Pour rappel, l'historique du terminal ne contient que les 2000 dernières commandes effectuées. Contrairement à ce que l'on pourrait penser, 2000 commandes, ça va vite.
+
 
 
 ## Petit point ChatGPT
