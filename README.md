@@ -140,7 +140,7 @@ Si il vous reste du temps, injectez votre MAG dans ```Anvi'o```. Produisez la ``
 
 
 # Exercice : Pseudo-Métagénomique
-Récupérer le graph d'assemblage ```assembly_graph.gfa``` du fichier partagé ```/data/```
+Récupérez le graph d'assemblage ```assembly_graph.gfa``` du fichier partagé ```/data/```
 
 ## Visualisation avec ```Bandage```
 Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut charger le graph d'assemblage dans le bouton en haut à gauche ```load graph```. Cliquez ensuite sur le bouton ```draw graph```. Laissez la machine travailer quelques secondes puis prenez quelques minutes pour essayer de comprendre ce que vous avez devant les yeux. N'hésitez pas à aller faire un tour sur le wiki de Bandage pour voir un peu comment ça fonctionne : https://github.com/rrwick/Bandage/wiki
@@ -158,7 +158,7 @@ Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut cha
 ## Annotations avec ```PROKKA```
 Utilisez ```PROKKA``` pour annoter votre dataset. 
 Jonglez avec l'output, fouillez dedans, qu'y trouvez vous ? 
-Récupérer les séquences prédites d'ARN16S. Blastez les en ligne. Confirmez que vous retombez bien sur votre première estimation.
+Récupérez les séquences prédites d'ARN16S. Blastez les en ligne. Confirmez que vous retombez bien sur votre première estimation.
 
 ##  Manipulation avec ```Anvi'o```
 ### Préparation du dataset
