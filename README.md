@@ -1,5 +1,9 @@
 # TP de Metagenomique
 
+## IMPORTANT : Rendu en fin de TP
+Travaillez en trinôme.
+Vous devez rendre, à la fin de la deuxième séance, un document synthétisant vos réponses aux différentes questions présentes dans le document suivant. Pour chaque question identifiée, reportez la sur un document texte et répondez-y. Veuillez utilisez la trame de TP en fichier texte présente sur le git pour répondre. Veuillez copier-coller les commandes que vous avez utilisé pour répondre à l'exercice. Pour y accéder si vous avez oublié, vous pouvez utilisez la commande ```history``` qui listera les 2000 dernières commandes effectuées en commençant par les dernières. Attention, je n'ai pas reporté toutes les questions sur le document, donc lisez bien la trae de TP qui suit pour y reporter toutes les questions. 
+
 ## Utiliser un cluster de calcul
 
 Les clusters de calculs sont des machines multiples divisées en deux grandes entitées : Le serveur frontal (Marygold) et les noeuds (Nodes).
@@ -68,7 +72,7 @@ Pour savoir comment utiliser fastqc, vous pouvez utiliser la commande suivante.
 ```
 fastqc
 ```
-Interprétez. Discutez les valeurs observées contre ce que l'on attendrait avec d'auitres techniques de séquençage. Vous pouvez vous fier à vos connaissances, chercher sur internet ou demander l'avis de ChatGPT sur les scores moyens etc. 
+Interprétez. Discutez les valeurs observées contre ce que l'on attendrait avec d'auitres techniques de séquençage. Vous pouvez vous fier à vos connaissances, chercher sur internet ou demander l'avis de ChatGPT sur les scores moyens etc. Combien de fragment ? Taille moyenne etc ?
 
 ## Assemblage
 
@@ -127,7 +131,7 @@ Dressez un petit tableau synthétisant le nombre de CDS (Coding Sequences) déte
 Fouillez dans les outputs de PROKKA, trouvez un gène de ménage marqueur (tel que RpoB, 16S rRNA CDS ou autre gène de ménage). Déterminez la taxonomie de cette séquence à l'aide de Blast.
 Quelle est la taxonomie de l'organisme le plus proche dans la base de donnée du NCBI ? Quel est le pourcentage d'indetité entre la séquence connue et la votre ? D'après le cours de Métabarcoding, quel niveau taxonomique pensez vous avoir découvert ? 
 
-## Visualisation avec Anvi'o
+## Anvi'o
 
 Si il vous reste du temps, injectez votre MAG dans ```Anvi'o```. Produisez la ```contigs.db``` et le ```PROFILE```. Explorez votre MAG à l'aide de ```anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```. Est-ce que le taux de GC est consistant sur tout le MAG ? Pensez vous que votre MAG soit complet ? Pour le tester, utilisez ```anvi-estimate-genome-completeness -c Circular.db```. Explorez l'output, que voyez vous ? Détaillez.
 
@@ -166,20 +170,26 @@ anvi-gen-contigs-database--contigs-fasta assembly.fasta --project-name Pseudo-Me
 #### QUESTION
 Lisez bien l'output visuel d'Anvi'o. Que vous apprend-t-il ? 
 
+### Préparation pour visualisation
+Commencez par créer un objet PROFILE afin de pouvoir le visualiser avec l'outil interactif
+```
+anvi-profile -c contigs-db --blank-profile
+```
+### Complétude de génome
+Combien de génomes dans l'échantillon estimés par Anvi'o ? Est ce cohérent avec ec que vous aviez inféré depuis le graph d'assemblage sur ```Bandage``` ?  
+```anvi-estimate-genome-completeness -c Circular.db```
+
+### Visualisation 
+Combien de génomes voyez vous ? D'après vous, qu'utilise Anvi'o pour les discriminer ? 
+```anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```
+
+# Optionnel - long et pas sûr de focntionner
+
 ### Annotation du dataset
 ```
 anvi-run-kegg-kofams -c contigs.db -T 4
 ````
 Cette étape prend quelques minutes, allez boire un café
-
-### Visualisation du dataset
-```
-anvi-profile -c contigs-db --blank-profile
-```
-Il faut que je demande à Camélia pour la visualisation sur naviagetru. il faut un X
-
-
-
 
 ### Estimation du métabolism
 Pas sur qu'on fasse cette partie
