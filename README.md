@@ -117,7 +117,22 @@ La somme des séquences contigües forme un MAG : __Metagenome-Assemble Genome__
 
 Deux possibilités : 
 - Vos fragment sont tous (potentiellement) contigües : Cliquez dans la barre du haut sur ```Select``` - ```Select nodes based on contiguity``` - ``` Select possibly contiguous nodes```. Vous avez donc sélectionné tous les fragments (nodes) concernés. Cliquez, toujours en haut sur ```Output``` - ```Save selected node sequences to fasta```. Enregistrez le fichier au bon endroit et nommez le de façon à vous souvenir de quoi il s'agit.
-- Vos fragments ne sont pas tous contigües et vous avez identifié la contigüité en deux temps : Sélectionnez votre premier jeu de séquences possiblement contigües avec ```Select``` - ```Select nodes based on contiguity``` - ``` Select possibly contiguous nodes```. Copiez la liste des séquences sélectionnés, à droite : ```Selected nodes (N)```. Collez la liste dans un fichier texte pour ne pas la perdre. Faites la même chose avec l'autre set de séquences contigües déterminé. Sélectionnez les séquences à partir des identifiants. Puis extrayez les sésuences ```Output``` - ```Save selected node sequences to fasta```. Enregistrez le fichier au bon endroit et nommez le de façon à vous souvenir de quoi il s'agit.
+- Vos fragments ne sont pas tous contigües et vous avez identifié la contigüité en deux temps : Sélectionnez votre premier jeu de séquences possiblement contigües avec ```Select``` - ```Select nodes based on contiguity``` - ``` Select possibly contiguous nodes```. Copiez la liste des séquences sélectionnés, à droite : ```Selected nodes (N)```. Collez la liste dans un fichier texte pour ne pas la perdre. Faites la même chose avec l'autre set de séquences contigües déterminé. Sélectionnez les séquences à partir des identifiants. Puis extrayez les sésuences ```Output``` - ```Save selected node sequences to fasta```. Enregistrez le fichier au bon endroit et nommez le de façon à vous souvenir de quoi il s'agit. Quelle taille fait votre MAG ? Combien de fragments, combien de nucléotides ? Qu'est ce que ça représente par rapport au génome Bactérien moyen ? Pensez vous que votre MAG soit complet ? Quelle que soit votre réponse, justifiez la avec au moins deux éléments.  
+
+## Annotation de votre MAG
+Utilisez ```PROKKA``` pour annoter votre MAG. Explorez la liste des gènes identifiés. 
+Dressez un petit tableau synthétisant le nombre de CDS (Coding Sequences) détectées. Pouvez vous inférer un métabolisme de votre organisme à partir de cette liste. HINTS : Les enzymes sont elles anoxiques ou oxiques ? Photosynthèse ? Fixation d'Azote ? Dénitrification ? Respiration aérobie ? Etc. Etc. Etc.
+
+### Détermination taxonomique de votre MAG
+Fouillez dans les outputs de PROKKA, trouvez un gène de ménage marqueur (tel que RpoB, 16S rRNA CDS ou autre gène de ménage). Déterminez la taxonomie de cette séquence à l'aide de Blast.
+Quelle est la taxonomie de l'organisme le plus proche dans la base de donnée du NCBI ? Quel est le pourcentage d'indetité entre la séquence connue et la votre ? D'après le cours de Métabarcoding, quel niveau taxonomique pensez vous avoir découvert ? 
+
+## Visualisation avec Anvi'o
+
+Si il vous reste du temps, injectez votre MAG dans ```Anvi'o```. Produisez la ```contigs.db``` et le ```PROFILE```. Explorez votre MAG à l'aide de ```anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```. Est-ce que le taux de GC est consistant sur tout le MAG ? Pensez vous que votre MAG soit complet ? Pour le tester, utilisez ```anvi-estimate-genome-completeness -c Circular.db```. Explorez l'output, que voyez vous ? Détaillez.
+
+### Bravo pour être arrivé jusque là.
+
 
 
 # Exercice : Pseudo-Métagénomique
