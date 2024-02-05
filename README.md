@@ -93,6 +93,8 @@ Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut cha
 
 ## Identification
 
+Quoi qu'il arrive, notez toujours bien chacune des étapes que vous réalisez, vous aurez besoin de les détailler sur votre rendu de TP.
+
 Deux fichiers de séquences sont à votre disposition :
 - 16S.fasta
 - Carbon_related_genes.fasta
@@ -111,7 +113,11 @@ Sélectionnez cette séquence en cliquant dessus. Dans le menu de gauche, dans l
 Votre fragment d'intérêt se color en vert foncé, d'autres se colorent en vert foncé ou en vert clair. Foncé = Contiguité fortement probable. Vert clair = Contiguité possible. Explorez les limites de votre contiguité. Parfois il est difficile de déterminer la contiguité avec des courts fragments. Déterminez la contiguité des fragments aux extrémitié de la contiguité précédamment déterminée. Vous suivez toujours ? ;)
 La somme des séquences contigües forme un MAG : __Metagenome-Assemble Genome__
 
-### Sous-échantillonnage de vot
+### Extraction de votre MAG
+
+Deux possibilités : 
+- Vos fragment sont tous (potentiellement) contigües : Cliquez dans la barre du haut sur ```Select``` - ```Select nodes based on contiguity``` - ``` Select possibly contiguous nodes```. Vous avez donc sélectionné tous les fragments (nodes) concernés. Cliquez, toujours en haut sur ```Output``` - ```Save selected node sequences to fasta```. Enregistrez le fichier au bon endroit et nommez le de façon à vous souvenir de quoi il s'agit.
+- Vos fragments ne sont pas tous contigües et vous avez identifié la contigüité en deux temps : Sélectionnez votre premier jeu de séquences possiblement contigües avec ```Select``` - ```Select nodes based on contiguity``` - ``` Select possibly contiguous nodes```. Copiez la liste des séquences sélectionnés, à droite : ```Selected nodes (N)```. Collez la liste dans un fichier texte pour ne pas la perdre. Faites la même chose avec l'autre set de séquences contigües déterminé. Sélectionnez les séquences à partir des identifiants. Puis extrayez les sésuences ```Output``` - ```Save selected node sequences to fasta```. Enregistrez le fichier au bon endroit et nommez le de façon à vous souvenir de quoi il s'agit.
 
 
 # Exercice : Pseudo-Métagénomique
