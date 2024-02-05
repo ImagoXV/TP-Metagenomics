@@ -132,8 +132,12 @@ Fouillez dans les outputs de PROKKA, trouvez un gène de ménage marqueur (tel q
 Quelle est la taxonomie de l'organisme le plus proche dans la base de donnée du NCBI ? Quel est le pourcentage d'indetité entre la séquence connue et la votre ? D'après le cours de Métabarcoding, quel niveau taxonomique pensez vous avoir découvert ? 
 
 ## Anvi'o
+En premier lieu, lancez la commande suivante :
+```
+export PATH=$PATH:/students/HAU802I/data/
+```
 
-Si il vous reste du temps, injectez votre MAG dans ```Anvi'o```. Produisez la ```contigs.db``` et le ```PROFILE```. Explorez votre MAG à l'aide de ```anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```. Est-ce que le taux de GC est consistant sur tout le MAG ? Pensez vous que votre MAG soit complet ? Pour le tester, utilisez ```anvi-estimate-genome-completeness -c Circular.db```. Explorez l'output, que voyez vous ? Détaillez.
+Si il vous reste du temps, injectez votre MAG dans ```Anvi'o```. Produisez la ```contigs.db``` et le ```PROFILE```. Explorez votre MAG à l'aide de ```anvio anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```. Est-ce que le taux de GC est consistant sur tout le MAG ? Pensez vous que votre MAG soit complet ? Pour le tester, utilisez ```anvio anvi-estimate-genome-completeness -c Circular.db```. Explorez l'output, que voyez vous ? Détaillez.
 
 ### Bravo pour être arrivé jusque là.
 
@@ -161,11 +165,15 @@ Jonglez avec l'output, fouillez dedans, qu'y trouvez vous ?
 Récupérez les séquences prédites d'ARN16S. Blastez les en ligne. Confirmez que vous retombez bien sur votre première estimation.
 
 ##  Manipulation avec ```Anvi'o```
+En premier lieu, lancez la commande suivante :
+```
+export PATH=$PATH:/students/HAU802I/data/
+```
 ### Préparation du dataset
 Pour manipuler un métagénome avec Anvio, il faut commencer par créer un objket ```.db```, une database, la marque de fabrique d'Anvi'o
 Le calcul prend moins d'une minute
 ```
-anvi-gen-contigs-database--contigs-fasta assembly.fasta --project-name Pseudo-Metagenomics --output-db-path contigs.db --num-threads 4
+anvio anvi-gen-contigs-database--contigs-fasta assembly.fasta --project-name Pseudo-Metagenomics --output-db-path contigs.db --num-threads 4
 ```
 #### QUESTION
 Lisez bien l'output visuel d'Anvi'o. Que vous apprend-t-il ? 
@@ -173,27 +181,27 @@ Lisez bien l'output visuel d'Anvi'o. Que vous apprend-t-il ?
 ### Préparation pour visualisation
 Commencez par créer un objet PROFILE afin de pouvoir le visualiser avec l'outil interactif
 ```
-anvi-profile -c contigs-db --blank-profile
+anvio anvi-profile -c contigs-db --blank-profile
 ```
 ### Complétude de génome
 Combien de génomes dans l'échantillon estimés par Anvi'o ? Est ce cohérent avec ec que vous aviez inféré depuis le graph d'assemblage sur ```Bandage``` ?  
-```anvi-estimate-genome-completeness -c Circular.db```
+```anvio anvi-estimate-genome-completeness -c Circular.db```
 
 ### Visualisation 
 Combien de génomes voyez vous ? D'après vous, qu'utilise Anvi'o pour les discriminer ? 
-```anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```
+```anvio anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```
 
 # Optionnel - long et pas sûr de focntionner
 
 ### Annotation du dataset
 ```
-anvi-run-kegg-kofams -c contigs.db -T 4
+anvio anvi-run-kegg-kofams -c contigs.db -T 4
 ````
 Cette étape prend quelques minutes, allez boire un café
 
 ### Estimation du métabolism
 Pas sur qu'on fasse cette partie
 ```
-anvi-estimate-metabolism -c contigs.db \
+anvio anvi-estimate-metabolism -c contigs.db \
                          -O Pseudo-metagenomics_metabolism
 ```
