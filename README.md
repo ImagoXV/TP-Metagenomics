@@ -93,11 +93,26 @@ Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut cha
 
 ## Identification
 
-Je vais vous distribuer un identifiant de séquence. Vous allez pêcher cette séquence à l'aide de la fonction ```blastn``` intégré à Bandage en cliquant sur le bouton en bas à gauche ```Create/View Blast search```. Prenez conscience de ce que vous faites. Qu'avez vous identifié sur les séquences ? 
+Deux fichiers de séquences sont à votre disposition :
+- 16S.fasta
+- Carbon_related_genes.fasta
+Choisissez l'un de ces fichiers pour la suite de l'exercice. Le choix n'a pas d'impact négatif sur vos résultats. 
+Vous allez pêcher ces séquences à l'aide de la fonction ```blastn``` intégré à Bandage en cliquant sur le bouton en bas à gauche ```Create/View Blast search```. Prenez conscience de ce que vous faites.
+Qu'avez vous identifié sur les séquences ? 
 
 ## Binning préhistorique
 
-L'idée désormais c'est d'utiliser le marqueur que vous avez placé sur votre graph d'assemblage pour essayer de retrouver les séquences qui vont ensemble
+L'idée désormais c'est d'utiliser le marqueur que vous avez placé sur votre graph d'assemblage pour essayer de retrouver les séquences qui vont ensemble.
+
+### Déterminer la contiguité d'une séquence d'intérêt
+Définissez contiguité
+Choissiez une séquence qui vous plait. Elle peut porter un marqueur 16S, un egène lié au métabolisme carboné ou juste être long. Ce que vous voulez. 
+Sélectionnez cette séquence en cliquant dessus. Dans le menu de gauche, dans la section ```Graph Display``` - ```Color by contiguity``` - ``` Determine contiguity```.
+Votre fragment d'intérêt se color en vert foncé, d'autres se colorent en vert foncé ou en vert clair. Foncé = Contiguité fortement probable. Vert clair = Contiguité possible. Explorez les limites de votre contiguité. Parfois il est difficile de déterminer la contiguité avec des courts fragments. Déterminez la contiguité des fragments aux extrémitié de la contiguité précédamment déterminée. Vous suivez toujours ? ;)
+La somme des séquences contigües forme un MAG : __Metagenome-Assemble Genome__
+
+### Sous-échantillonnage de vot
+
 
 # Exercice : Pseudo-Métagénomique
 Récupérer le graph d'assemblage ```assembly_graph.gfa``` du fichier partagé ```/data/```
