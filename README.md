@@ -69,6 +69,7 @@ Une façon plus simple de déterminer la qualité d'une séquence, ou d'un jeu d
 ### Exercice N°1 : FastQC 
 Utilisez le logiciel ```fastqc``` pour obtenir des informations relatives à la qualité de votre jeu de donnée de départ.
 Pour savoir comment utiliser fastqc, vous pouvez utiliser la commande suivante.
+**ATTENTION à lancer uniquement sur un noeud !**
 ```
 fastqc
 ```
@@ -78,7 +79,7 @@ Interprétez. Discutez les valeurs observées contre ce que l'on attendrait avec
 
 L'assemblage est un grand puzzle. Sauf qu'il est hardcore et qu'il existe plusieurs solutions qui se valent autant les unes que les autres. Et que l'on a pas la boîte pour voir si on ne fait pas n'importe quoi. utilisez flye pour reconstruire votre jeu de donnée en MAGs. N'oubliez pas qu'il s'agit d'un jeu de données **métagénomiques**.
 L'assemblage est une étape longue. 
-
+**ATTENTION Calcul lourd, à lancer uniquement sur un noeud !**
 ```
 flye 
 ```
@@ -124,7 +125,8 @@ Deux possibilités :
 - Vos fragments ne sont pas tous contigües et vous avez identifié la contigüité en deux temps : Sélectionnez votre premier jeu de séquences possiblement contigües avec ```Select``` - ```Select nodes based on contiguity``` - ``` Select possibly contiguous nodes```. Copiez la liste des séquences sélectionnés, à droite : ```Selected nodes (N)```. Collez la liste dans un fichier texte pour ne pas la perdre. Faites la même chose avec l'autre set de séquences contigües déterminé. Sélectionnez les séquences à partir des identifiants. Puis extrayez les sésuences ```Output``` - ```Save selected node sequences to fasta```. Enregistrez le fichier au bon endroit et nommez le de façon à vous souvenir de quoi il s'agit. Quelle taille fait votre MAG ? Combien de fragments, combien de nucléotides ? Qu'est ce que ça représente par rapport au génome Bactérien moyen ? Pensez vous que votre MAG soit complet ? Quelle que soit votre réponse, justifiez la avec au moins deux éléments.  
 
 ## Annotation de votre MAG
-Utilisez ```PROKKA``` pour annoter votre MAG. Explorez la liste des gènes identifiés. 
+
+Utilisez ```PROKKA``` pour annoter votre MAG. **ATTENTION Calcul lourd, à lancer uniquement sur un noeud !** Explorez la liste des gènes identifiés. 
 Dressez un petit tableau synthétisant le nombre de CDS (Coding Sequences) détectées. Pouvez vous inférer un métabolisme de votre organisme à partir de cette liste. HINTS : Les enzymes sont elles anoxiques ou oxiques ? Photosynthèse ? Fixation d'Azote ? Dénitrification ? Respiration aérobie ? Etc. Etc. Etc.
 
 ### Détermination taxonomique de votre MAG
@@ -160,7 +162,7 @@ Bandage est un logiciel de visualisation de graph d'assemblage. Il vous faut cha
 - Faites un dessin sur du papier pour représenter, selon vous l'organisation potentielle des fragments d'ADN les uns par rapport aux autres.
 
 ## Annotations avec ```PROKKA```
-Utilisez ```PROKKA``` pour annoter votre dataset. 
+Utilisez ```PROKKA``` pour annoter votre dataset. **ATTENTION Calcul lourd, à lancer uniquement sur un noeud !**
 Jonglez avec l'output, fouillez dedans, qu'y trouvez vous ? 
 Récupérez les séquences prédites d'ARN16S. Blastez les en ligne. Confirmez que vous retombez bien sur votre première estimation.
 
