@@ -175,7 +175,7 @@ export PATH=$PATH:/students/HAU802I/data/
 Pour manipuler un métagénome avec Anvio, il faut commencer par créer un objket ```.db```, une database, la marque de fabrique d'Anvi'o
 Le calcul prend moins d'une minute
 ```
-anvio anvi-gen-contigs-database--contigs-fasta assembly.fasta --project-name Pseudo-Metagenomics --output-db-path contigs.db --num-threads 4
+anvio anvi-gen-contigs-database--contigs-fasta assembly.fasta --project-name PseudoMetagenomics --output-db-path contigs.db --num-threads 4
 ```
 #### QUESTION
 Lisez bien l'output visuel d'Anvi'o. Que vous apprend-t-il ? 
@@ -183,21 +183,26 @@ Lisez bien l'output visuel d'Anvi'o. Que vous apprend-t-il ?
 ### Préparation pour visualisation
 Commencez par créer un objet PROFILE afin de pouvoir le visualiser avec l'outil interactif
 ```
-anvio anvi-profile -c contigs-db --blank-profile
+srun anvio anvi-profile -c contigs.db --blank-profile -o PROFILE --sample-name PseudoMetagenomics
 ```
 ### Complétude de génome
 Combien de génomes dans l'échantillon estimés par Anvi'o ? Est ce cohérent avec ec que vous aviez inféré depuis le graph d'assemblage sur ```Bandage``` ?  
-```anvio anvi-estimate-genome-completeness -c Circular.db```
+```
+srun anvio anvi-run-hmms -c contigs.db
+srun anvio anvi-estimate-genome-completeness -c contigs.db
+```
 
 ### Visualisation 
 Combien de génomes voyez vous ? D'après vous, qu'utilise Anvi'o pour les discriminer ? 
-```anvio anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```
+```
+srun anvio anvi-interactive -c contigs.db -p PROFILE/PROFILE.db
+```
 
 # Optionnel - long et pas sûr de focntionner
 
 ### Annotation du dataset
 ```
-anvio anvi-run-kegg-kofams -c contigs.db -T 4
+srun anvio anvi-run-kegg-kofams -c contigs.db -T 4
 ````
 Cette étape prend quelques minutes, allez boire un café
 
