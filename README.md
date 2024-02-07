@@ -125,7 +125,10 @@ Deux possibilités :
 - Vos fragments ne sont pas tous contigües et vous avez identifié la contigüité en deux temps : Sélectionnez votre premier jeu de séquences possiblement contigües avec ```Select``` - ```Select nodes based on contiguity``` - ``` Select possibly contiguous nodes```. Copiez la liste des séquences sélectionnés, à droite : ```Selected nodes (N)```. Collez la liste dans un fichier texte pour ne pas la perdre. Faites la même chose avec l'autre set de séquences contigües déterminé. Sélectionnez les séquences à partir des identifiants. Puis extrayez les sésuences ```Output``` - ```Save selected node sequences to fasta```. Enregistrez le fichier au bon endroit et nommez le de façon à vous souvenir de quoi il s'agit. Quelle taille fait votre MAG ? Combien de fragments, combien de nucléotides ? Qu'est ce que ça représente par rapport au génome Bactérien moyen ? Pensez vous que votre MAG soit complet ? Quelle que soit votre réponse, justifiez la avec au moins deux éléments.  
 
 ## Annotation de votre MAG
-
+En premier lieu, lancez la commande suivante :
+```
+export PATH=$PATH:/students/HAU802I/data/:/data/containers/
+```
 Utilisez ```PROKKA``` pour annoter votre MAG. **ATTENTION Calcul lourd, à lancer uniquement sur un noeud !** Explorez la liste des gènes identifiés. 
 Dressez un petit tableau synthétisant le nombre de CDS (Coding Sequences) détectées. Pouvez vous inférer un métabolisme de votre organisme à partir de cette liste. HINTS : Les enzymes sont elles anoxiques ou oxiques ? Photosynthèse ? Fixation d'Azote ? Dénitrification ? Respiration aérobie ? Etc. Etc. Etc.
 
@@ -136,7 +139,7 @@ Quelle est la taxonomie de l'organisme le plus proche dans la base de donnée du
 ## Anvi'o
 En premier lieu, lancez la commande suivante :
 ```
-export PATH=$PATH:/students/HAU802I/data/
+export PATH=$PATH:/students/HAU802I/data/:/data/containers/
 ```
 
 Si il vous reste du temps, injectez votre MAG dans ```Anvi'o```. Produisez la ```contigs.db``` et le ```PROFILE```. Explorez votre MAG à l'aide de ```anvio anvi-interactive -c contigs.db -p PROFILE/PROFILE.db```. Est-ce que le taux de GC est consistant sur tout le MAG ? Pensez vous que votre MAG soit complet ? Pour le tester, utilisez ```anvio anvi-estimate-genome-completeness -c Circular.db```. Explorez l'output, que voyez vous ? Détaillez.
@@ -169,7 +172,7 @@ Récupérez les séquences prédites d'ARN16S. Blastez les en ligne. Confirmez q
 ##  Manipulation avec ```Anvi'o```
 En premier lieu, lancez la commande suivante :
 ```
-export PATH=$PATH:/students/HAU802I/data/
+export PATH=$PATH:/students/HAU802I/data/:/data/containers/
 ```
 ### Préparation du dataset
 Pour manipuler un métagénome avec Anvio, il faut commencer par créer un objket ```.db```, une database, la marque de fabrique d'Anvi'o
