@@ -16,7 +16,7 @@ Plusieurs façons de lancer un job avec slurm :
 ```
 srun cmd [--options]
 ```
-#### Pour utilise run noeud et se positionner dessus plutôt que sur le frontal
+#### Pour utilise un noeud et se positionner dessus plutôt que sur le frontal
 ```
 srun --mem nG --pty bash 
 ```
@@ -41,7 +41,7 @@ Attention, contrairement à  ce qui se fait dans tous la plupart des autres lang
 echo Hello world #Command
 ```
 #### Défintion de variables ```bash```
-Les chemins d'accès aux fichiers sont longs, compliqués et ne tolèrent pas la moindre erreur de caractère. Je vous conseil d'utilisez du copier-coller ou bien du clic molette pour copier-coller rapidement (Triple doigts sur un pad tactile). Pour éviter les commandes longues comme le bras et les erruers, on définit souvent des variables avant de travailler. Exemple :
+Les chemins d'accès aux fichiers sont longs, compliqués et ne tolèrent pas la moindre erreur de caractère. Je vous conseil d'utilisez du copier-coller ou bien du clic molette pour copier-coller rapidement (Triple doigts sur un pad tactile). Pour éviter les commandes longues comme le bras et les erreurs, on définit souvent des variables avant de travailler. Exemple :
 ```
 FASTQ="/path/to/data/sequence.fastq"
 
@@ -63,7 +63,7 @@ Dans le cadre de ces exercies, ne l'utilisez pas tout de suite, lisez d'abord la
 
 ## Prise en main du jeu de données
 
-Les données fastq correspondent à du produit de séquenceur. Dans un fastq, le nucléotide n'est pas figé, c'est une **mesure**. Comme toute mesure, elle possède sa part d'incertitude. On détermine cette incertitude à l'aide de son score Phred+33. Le score est matérialisé par un caractère ASCI. Une façon de le comprendre au doigt mouillé où le caractère représente la probabilité d'éxactitude de mesure de la base: A>B>C>....>a>b>c>.....>$>,>;>!
+Les données fastq correspondent à un produit de séquenceur. Dans un fastq, le nucléotide n'est pas figé, c'est une **mesure**. Comme toute mesure, elle possède sa part d'incertitude. On détermine cette incertitude à l'aide de son score Phred+33. Le score est matérialisé par un caractère ASCI. Une façon de le comprendre au doigt mouillé où le caractère représente la probabilité d'éxactitude de mesure de la base: A>B>C>....>a>b>c>.....>$>,>;>!
 Une façon plus simple de déterminer la qualité d'une séquence, ou d'un jeu de séquence, est d'utiliser un logiciel qui compile toutes ces informations de score et les matérialise sous la forme de graph :
 
 ### Exercice N°1 : FastQC 
